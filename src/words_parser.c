@@ -21,7 +21,7 @@ char* parser(char *line, int num){
 bool isEmpty(char *line){
     int isEmpty = 1;
 
-    for (int i = 0; i < strlen(line); ++i) {
+    for (size_t i = 0; i < strlen(line); ++i) {
         if (line[i] != ' ' && line[i] != '\t' && line[i] != '\n'){
             isEmpty = 0;
             break;
