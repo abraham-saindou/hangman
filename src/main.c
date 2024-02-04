@@ -4,10 +4,13 @@
 
 #include "stdlib.h"
 #include "stdio.h"
-#include "string.h"
+
 
 #include "gui.h"
 #include "words_parser.h"
+#include <string.h>
+
+char *strdup(const char *str);
 
 int main(/*int argc, char ** argv*/){
 
@@ -24,13 +27,14 @@ int main(/*int argc, char ** argv*/){
 
         char *tmp = strdup(line);
         char* res = parser(tmp, 3);
-            printf("La difficulté est%s\n", res);
 
+        printf("Chien : %s\n", tmp);
+        printf("La difficulté est%s\n\n", res);
 
 
         free(tmp);
     }
 
-    //display();
+    display();
     return 0;
 }
