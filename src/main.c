@@ -6,16 +6,26 @@
 #include "stdio.h"
 
 
-#include "gui.h"
+#include "gui/gui.h"
 #include "words_parser.h"
 #include <string.h>
 
+// has to declare it, because it's not recognize by compiler
 char *strdup(const char *str);
+
+// TODO: launch() must start program depending on args
+//
+// if args -> launch program with intended parameters
+// if no args -> games must choose a random word for player
+//
+// void launch();
 
 int main(/*int argc, char ** argv*/){
 
+    display();
+
     char line[1024];
-    FILE *csv = fopen(CSV_FILE, "r");
+    FILE *csv = fopen(TXT_FILE, "r");
     if (csv == NULL){
         perror("Error opening file");
     }
@@ -35,6 +45,6 @@ int main(/*int argc, char ** argv*/){
         free(tmp);
     }
 
-    display();
+
     return 0;
 }
